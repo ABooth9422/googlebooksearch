@@ -1,4 +1,5 @@
 import React,{Component} from "react"
+import ButtonRow from "../buttonRow"
 import "./style.css"
 
 class ResultRow extends Component{
@@ -10,33 +11,37 @@ class ResultRow extends Component{
     
     
     render(){
+        
+    const obj={
+        title:this.props.title,
+        author:this.props.author,
+        description:this.props.description,
+        image:this.props.image,
+        link:this.props.link
 
-    
+    }
     return(
         <>
-        <div id="test"className="container rounded bg-secondary text-white p-3">
+        <div id="test"className="container rounded bg-secondary text-white my-3 p-3">
            <div className="row">
             <div className="col-9">
-            <p className="mx-2">Harry potters nuts</p>
+            <p className="mx-2">Title: {this.props.title}</p>
             </div>
             <div className="col-3 d-flex justify-content-end">
-              <button type="button" className="btn btn-danger mx-2">View</button>
-              <button type="button" className="btn btn-warning">Save</button>
+            <ButtonRow remove={this.props.remove}arrayPosition={this.props.arrayPosition}searched={this.props.searched} obj={obj}add={this.props.add}id={this.props.id}link={this.props.link ||"/"}save={this.props.save}  view={this.props.view}/>
          </div>
          </div>
          <div className="row mx-2">
-            <p>He still sucks nuts</p>
+            <p>Author: {this.props.author}</p>
             </div>
-            <div className="row mx-2">
-            <p>Author of nuts</p>
-            </div>
-       <div className="row">
+  
+       <div className="row my-2">
 
        <div className="col-3">
-       <img width="300px" height="200px"className="mx-2 rounded float-left"src={this.state.image}></img> 
+       <img alt="bookImage"width="200px" height="200px"className="mx-2 rounded "src={this.props.image || this.state.image}></img> 
        </div>
         <div className="col-9">
-        <p className="mx-5 p-5">Paragraph </p>
+        <p className="mx-5">{this.props.description} </p>
         </div>
            
        

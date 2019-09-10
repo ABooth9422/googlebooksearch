@@ -1,0 +1,12 @@
+a{
+    color:white;
+}
+p{
+    text-shadow:black 3px 3px 3px;
+}
+img{
+    box-shadow:black 3px 3px 3px;
+}
+img:hover{
+    transform: rotate3d()
+}
